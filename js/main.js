@@ -33,44 +33,51 @@ thumbnailEl[index].classList.add("active");
 
 //4.
 arrowDown.addEventListener("click", function() {
+    changeSlide (1);
+//     thumbnailEl[index].classList.remove("active");
+// // 5.
+//     if (index < images.length - 1) {
 
-    thumbnailEl[index].classList.remove("active");
-// 5.
-    if (index < images.length - 1) {
+//         index++;
+// // 6.
+//     } else {
 
-        index++;
-// 6.
-    } else {
+//         index = 0;
 
-        index = 0;
+//     };
 
-    };
+//     activeImg.src = images[index];
 
-    activeImg.src = images[index];
+//     thumbnailEl[index].classList.add("active");
 
-    thumbnailEl[index].classList.add("active");
-    
 });
 
 //7.
 arrowUp.addEventListener("click", function() {
+    changeSlide(-1);
+//     thumbnailEl[index].classList.remove("active");
+// // 5.
+//     if (index > 0) {
 
-    thumbnailEl[index].classList.remove("active");
-// 5.
-    if (index > 0) {
+//         index--;
+// // 6.
+//     } else {
 
-        index--;
-// 6.
-    } else {
+//         index = images.length - 1 ;
 
-        index = images.length - 1 ;
+//     };
 
-    };
+//     activeImg.src = images[index];
 
-    activeImg.src = images[index];
-
-    thumbnailEl[index].classList.add("active");
+//     thumbnailEl[index].classList.add("active");
     
 });
 
+// cambiare le slide in base alla direzione 
 
+function changeSlide(direction) {
+    thumbnailEl[index].classList.remove("active");
+    index = (index + direction + images.length) % images.length;
+    activeImg.src = images[index];
+    thumbnailEl[index].classList.add("active");
+}
