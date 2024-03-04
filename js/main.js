@@ -81,3 +81,10 @@ function changeSlide(direction) {
     activeImg.src = images[index];
     thumbnailEl[index].classList.add("active");
 }
+
+
+
+// Scroll automatico ogni 3 secondi
+setInterval(function() {
+    changeSlide(1);
+}, 3000);
