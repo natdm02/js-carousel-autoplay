@@ -1,54 +1,98 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* ----------- */
-
-.container,
-.inner-container {
-    height: 320px;
-}
-/* icone  */
-.container #slider {
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
     display: flex;
-    align-items: center;   
-    position: relative;   
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    max-width: 600px;
+    width: 100%;
 }
 
-.container #slider .arrow {
+.inner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #333;
+}
+
+
+/* icone  */
+
+
+#slider {
+    position: relative;
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+#active-img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease-in-out;
+}
+
+.arrow {
     position: absolute;
-    color: white;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
     cursor: pointer;
+    color: #333;
 }
 
-.container #slider .arrow#arrow-down {
-    bottom: 10px;
-    left: 50%;
+#arrow-up {
+    left: 10px;
 }
 
-.container #slider .arrow#arrow-up {
-    top: 10px;
-    left: 50%;
+#arrow-down {
+    right: 10px;
 }
 
 
 /* sx */
 
-.container #thumbnails {
+.thumbnail-container {
     display: flex;
-    flex-flow: column nowrap;
-    background-color: black;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.container #thumbnails .thumbnail {
-    width: 200px;
-    object-fit: cover;
-    opacity: 0.4;
+.thumbnail {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: opacity 0.3s ease-in-out;
 }
 
-.container #thumbnails .thumbnail.active {
-  opacity: 1;
+.thumbnail.active {
+    opacity: 0.7;
 }
+
